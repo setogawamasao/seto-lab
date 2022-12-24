@@ -1,0 +1,17 @@
+doctype html
+
+block locals
+    - var title = 'ARPR | Self-introduction of a new era using AR';
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title #{title}
+    body
+        .container
+            block content
+            .footer
+                a.appstore_icon(href="https://apps.apple.com/jp/app/arpr/id1615558591")
+                    img(src="../images/appstore_badge.svg", alt="App Storeからダウンロード")
+                small &copy; 2022 ARPR.

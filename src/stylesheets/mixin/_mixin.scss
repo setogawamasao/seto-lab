@@ -1,0 +1,173 @@
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+//テーブルレイアウト
+//@include table_layout(10);で使う
+//margin はレイアウト同士の空き
+@mixin table_layout($margin: 0, $width: 100%) {
+  display: table;
+  margin: 0 auto;
+  width: #{$width};
+  border-collapse: collapse;
+  > * {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 #{$margin / 2}px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+//@include float_layout(マージンpx,列数,横幅,均等幅);で使う
+@mixin float_layout($margin: 0, $col: 2, $width: 100%, $auto_adjust: true) {
+  @include clearfix();
+  width: #{$width};
+  > * {
+    float: left;
+    vertical-align: top;
+    margin: 0 calc(#{$margin / 2}) #{$margin};
+    @if ($auto_adjust) {
+      width: calc(#{100 / $col * 1%} - #{$margin});
+    }
+
+    &:nth-child(#{$col}n) {
+      margin-right: 0;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:nth-child(#{$col}n + 1) {
+      clear: left;
+      margin-left: 0;
+    }
+  }
+}
+
+//vmは天地のセンタリングフラグ
+//hmは左右のセンタリングフラグ
+@mixin flex_layout($vm: false, $hm: false) {
+  display: flex;
+  flex-direction: row;
+
+  @if ($vm) {
+    -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+    align-items: center; /* 縦方向中央揃え */
+  }
+  @if ($hm) {
+    -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+    justify-content: center; /* 横方向中央揃え */
+  }
+}
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  -webkit-transition-property: $property;
+  transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property: $duration;
+  -o-transition-property: $duration;
+  -webkit-transition-property: $duration;
+  transition-property: $duration;
+}
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function: $timing;
+  -o-transition-timing-function: $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function: $timing;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
+}
+
+//背景を８分割にして伸び縮みする枠を作る
+//画像は正方形で、ファイル名は下記を参考に
+@mixin background_surround($base: "", $px: 10, $division: 1) {
+  background-image: url(#{$base}_top_left.png), url(#{$base}_top_right.png),
+    url(#{$base}_top_center.png), url(#{$base}_bottom_left.png),
+    url(#{$base}_bottom_right.png), url(#{$base}_bottom_center.png),
+    url(#{$base}_mid_left.png), url(#{$base}_mid_right.png);
+
+  background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat,
+    repeat-x, repeat-y, repeat-y;
+
+  background-position: left top, right top, center top, left bottom,
+    right bottom, center bottom, left center, right center;
+
+  background-size: #{$px / $division}px #{$px / $division}px;
+}
+
+//SVG背景色
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}
+@function url-encode($string) {
+  $map: (
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    " ": "%20",
+    "!": "%21",
+    "*": "%2A",
+    "'": "%27",
+    '"': "%22",
+    "(": "%28",
+    ")": "%29",
+    ";": "%3B",
+    ":": "%3A",
+    "@": "%40",
+    "&": "%26",
+    "=": "%3D",
+    "+": "%2B",
+    "$": "%24",
+    ",": "%2C",
+    "/": "%2F",
+    "?": "%3F",
+    "#": "%23",
+    "[": "%5B",
+    "]": "%5D",
+  );
+  $new: $string;
+  @each $search, $replace in $map {
+    $new: str-replace($new, $search, $replace);
+  }
+  @return $new;
+}
+//function
+@function bg-svg($string) {
+  @return url("data:image/svg+xml;charset=UTF-8,#{url-encode($string)}");
+}
+
+@function calcvw($size) {
+  @return ($size / 768) * 100vw;
+}

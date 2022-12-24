@@ -1,0 +1,25 @@
+/*****************************************
+
+ヘッダー　PC
+
+*****************************************/
+
+//pc時のみ電話番号リンク無効
+a[href^="tel:"] {
+	pointer-events: none;
+}
+
+/*button reset*/
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	vertical-align: middle;
+	text-align: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}

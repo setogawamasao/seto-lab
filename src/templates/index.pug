@@ -1,0 +1,74 @@
+extends _layout.pug
+
+block locals
+
+block content
+    .main
+        .wrapper
+            include _menu.pug
+            .main__text
+                h1.main__text-h1
+                    img(src="../images/main_title.png", alt="ARPR")
+                p.main__text-p
+                    img(src="../images/main_title_txt.png", alt="Self-introduction of a new era using AR")
+            .main__border.scrolldown1
+                span Scroll
+    section#about
+        .about
+            .content
+                .about__contents.about__contents-01
+                    .wrapper
+                        .ttl
+                            h2
+                                img(src="../images/ttl_about.png", alt="ABOUT")
+                        .box.box-left
+                            h3
+                                |他にはない<br>魅力的なAR動画
+                            p.h3-caption
+                                |ありきたりな動画から卒業しよう
+                        .box.box-right
+                            img(src="../images/about_img01.png", alt="ARPR-イメージ画像01")
+                .about__contents.about__contents-02
+                    .wrapper
+                        .box-left
+                            img(src="../images/about_img02.png", alt="ARPR-イメージ画像02")
+                        .box-right
+                            h3
+                                |動画制作を<br>もっと手軽に
+                            p.h3-caption
+                                |ARなんて難しい？<br>拡張現実は君の手で生み出すんだ。
+    section#usage
+        .content.wrapper
+                .ttl
+                    h2
+                        img(src="../images/ttl_usage.png", alt="USAGE")
+                .video
+                    video(controls="autoplay", width="", height="")
+                        source(src="../images/ARPR_usage_v3_small01.mp4")
+                        p
+                            |動画を再生するには、videoタグをサポートしたブラウザが必要です。
+
+    section#producer
+        .wrapper
+            .ttl
+                h2
+                    img(src="../images/ttl_producer.png", alt="PRODUCER")
+            .content
+                .box.box-left
+                    h3
+                        img(src="../images/producer_txt01.png", alt="瀬戸川 将夫")
+                    p.h3-caption
+                        img(src="../images/producer_Txt02.png", alt="Masao Setogawa")
+                    a.mail(href="mailto:setogawa.m@gmail.com")
+                        |setogawa.m@gmail.com
+                    table
+                        tr
+                            th 2013年
+                        tr
+                            td 電気通信大学電気通信学部知能機械工学科卒業
+                        tr
+                            th 2015年
+                        tr
+                            td 電気通信大学大学院<br>情報理工学研究科知能機械工学専攻<br>修士課程修了
+                .box.box-right
+                    img(src="../images/producer_img01.png")
