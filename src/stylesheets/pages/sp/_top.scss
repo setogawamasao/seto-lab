@@ -32,7 +32,7 @@ h1 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-//   max-height: 600px;
+  //   max-height: 600px;
   height: 100vh;
   position: relative;
   &__text {
@@ -61,59 +61,59 @@ h1 {
 /*====== 9-1-1 縦線が動いてスクロールを促す =======*/
 
 /*スクロールダウン全体の場所*/
-.scrolldown1{
-    /*描画位置※位置は適宜調整してください*/
-	position:absolute;
-	right: 10%;
-	bottom: 0;
-    /*全体の高さ*/
-	height: 200px;
+.scrolldown1 {
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  /*全体の高さ*/
+  height: 200px;
 }
 
 /*Scrollテキストの描写*/
-.scrolldown1 span{
-    /*描画位置*/
-	position: absolute;
-	left: -0.6rem;
-	top: 10px;
-    /*テキストの形状*/
-	color: #eee;
-	font-size: 1.2rem;
-	letter-spacing: 0.05em;
-    transform: rotate(90deg);
+.scrolldown1 span {
+  /*描画位置*/
+  position: absolute;
+  left: -0.6rem;
+  top: 10px;
+  /*テキストの形状*/
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  transform: rotate(90deg);
 }
 
 /* 線の描写 */
-.scrolldown1::after{
-	content: "";
-    /*描画位置*/
-	position: absolute;
-	top: 0;
-    /*線の形状*/
-	width: 1px;
-	height: 200px;
-	background: #eee;
-    /*線の動き1.4秒かけて動く。永遠にループ*/
-	animation: pathmove 3.0s ease-in-out infinite;
-	opacity:0;
+.scrolldown1::after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  top: 0;
+  /*線の形状*/
+  width: 1px;
+  height: 200px;
+  background: #eee;
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 3s ease-in-out infinite;
+  opacity: 0;
 }
 
 /*高さ・位置・透過が変化して線が上から下に動く*/
-@keyframes pathmove{
-	0%{
-		height:0;
-		top:0;
-		opacity: 0;
-	}
-	30%{
-		height:150px;
-		opacity: 1;
-	}
-	100%{
-		height:0;
-		top:200px;
-		opacity: 0;
-	}
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 150px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 200px;
+    opacity: 0;
+  }
 }
 
 header {
@@ -130,30 +130,30 @@ header {
 .ttl {
   position: relative;
   h2 {
-      display: inline-block;
+    display: inline-block;
+    border-bottom: 2px solid #c21500;
+    border-image: linear-gradient(
+      to right,
+      #00ad00 0%,
+      #6de3fc 50%,
+      #9464fe 100%
+    );
+    border-image-slice: 1;
+    &::before {
+      position: absolute;
+      width: 500px;
+      content: "";
+      bottom: 0;
+      left: -500px;
       border-bottom: 2px solid #c21500;
       border-image: linear-gradient(
-        to right,
+        to left,
         #00ad00 0%,
         #6de3fc 50%,
         #9464fe 100%
       );
       border-image-slice: 1;
-      &::before {
-        position: absolute;
-        width: 500px;
-        content: "";
-        bottom: 0;
-        left: -500px;
-        border-bottom: 2px solid #c21500;
-        border-image: linear-gradient(
-          to left,
-          #00ad00 0%,
-          #6de3fc 50%,
-          #9464fe 100%
-        );
-        border-image-slice: 1;
-      }
+    }
   }
 }
 
@@ -204,98 +204,99 @@ header {
 }
 
 #usage {
-    background-image: url(../images/usage_bg.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 100px;
-    padding-bottom: 100px;
-    .ttl {
-        margin-bottom: 60px;
+  background-image: url(../images/usage_bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  .ttl {
+    margin-bottom: 60px;
+  }
+  .video {
+    text-align: center;
+    video {
+      width: 100%;
+      border-radius: 40px;
+      box-shadow: 4px 4px 6px gray;
     }
-    .video {
-        text-align: center;
-        video {
-          width: 100%;
-            border-radius: 40px;
-            box-shadow: 4px 4px 6px gray;
-        }
-    }
+  }
 }
 
 #producer {
-    margin-bottom: 60px;
-    .content {
-      margin-top: 60px;
-        display: flex;
-        flex-direction: column-reverse;
+  margin-bottom: 60px;
+  .content {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .box-right {
+    width: 80%;
+    margin: auto auto 40px;
+  }
+  .box-left {
+    text-align: center;
+  }
+  h3 {
+    margin-bottom: 24px;
+  }
+  .h3-caption {
+    margin-bottom: 30px;
+  }
+  .mail {
+    color: #0081f6;
+    display: inline-block;
+    margin-bottom: 54px;
+  }
+  table {
+    th {
+      text-align: left;
     }
-    .box-right {
-      width: 80%;
-      margin: auto auto 40px;
+    th,
+    td {
+      text-align: left;
+      padding-bottom: 6px;
     }
-    .box-left {
-      text-align: center;
-    }
-    h3 {
-        margin-bottom: 24px;
-    }
-    .h3-caption {
-        margin-bottom: 30px;
-    }
-    .mail {
-        color: #0081f6;
-        display: inline-block;
-        margin-bottom: 54px;
-    }
-    table {
-        th {
-            text-align: left;
-        }
-        th, td {
-            text-align: left;
-            padding-bottom: 6px;
-        }
-    }
+  }
 }
 
 .footer {
   text-align: center;
   padding-bottom: 10px;
   .appstore_icon {
-      display: inline-block;
-      text-align: center;
-      margin: 0 auto 100px;
-      img {
-          height: 100px;
-      }
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto 100px;
+    img {
+      height: 100px;
+    }
   }
   small {
-      display: block;
-      font-size: 12px;
+    display: block;
+    font-size: 12px;
   }
 }
 
 #privacy {
-    // background: -webkit-linear-gradient(0deg, #00ad00, #6de3fc, #9464fe);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    .header_menu {
-        background-image: url(../images/main_img.png);
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: cover;
-          }
-    header {
-        max-width: 980px;
-        width: calc(100% - 44px);
-        margin: 0 auto;
-        padding: 30px 22px;
-    }
+  // background: -webkit-linear-gradient(0deg, #00ad00, #6de3fc, #9464fe);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  .header_menu {
+    background-image: url(../images/main_img.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  header {
+    max-width: 980px;
+    width: calc(100% - 44px);
+    margin: 0 auto;
+    padding: 30px 22px;
+  }
 }
 .privacy {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   h1 {
     margin-bottom: 20px;
     color: #ff8c00;
