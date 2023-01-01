@@ -6,7 +6,7 @@ html {
   height: 100%;
 }
 .container {
-  background-image: url("../images/footer_bg.png");
+  background-image: url("../images/background/footer_bg.png");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -29,7 +29,7 @@ h1 {
 }
 
 .main {
-  background-image: url(../images/main_img.png);
+  background-image: url(../images/background/main_img.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -165,14 +165,14 @@ header {
     }
   }
   &__contents-01 {
-    background-image: url("../images/about_bg01.png");
+    background-image: url("../images/background/about_bg01.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   &__contents-02 {
     margin-top: 150px;
-    background-image: url("../images/about_bg02.png");
+    background-image: url("../images/background/about_bg02.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -189,7 +189,7 @@ header {
 }
 
 #skills {
-  background-image: url(../images/usage_bg.png);
+  background-image: url(../images/background/usage_bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -271,7 +271,7 @@ header {
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
   .header_menu {
-    background-image: url(../images/main_img.png);
+    background-image: url(../images/background/main_img.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
