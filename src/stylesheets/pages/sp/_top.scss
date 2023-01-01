@@ -157,7 +157,7 @@ header {
   }
 }
 
-#about {
+#portfolio {
 }
 .about {
   &__contents {
@@ -203,7 +203,7 @@ header {
   }
 }
 
-#usage {
+#skills {
   background-image: url(../images/background/usage_bg.png);
   background-size: cover;
   background-position: center;
@@ -213,17 +213,19 @@ header {
   .ttl {
     margin-bottom: 60px;
   }
-  .video {
-    text-align: center;
-    video {
-      width: 100%;
-      border-radius: 40px;
-      box-shadow: 4px 4px 6px gray;
+
+  table {
+    th {
+      text-align: left;
+    }
+    th,
+    td {
+      padding-bottom: 6px;
     }
   }
 }
 
-#producer {
+#about {
   margin-bottom: 60px;
   .content {
     margin-top: 60px;
@@ -257,6 +259,13 @@ header {
       text-align: left;
       padding-bottom: 6px;
     }
+  }
+
+  .sns-link {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 40px;
   }
 }
 
