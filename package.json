@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve --mode=development",
-    "build": "webpack --mode=production && ./replacePath.sh",
-    "build:dev": "webpack"
+    "build": "npx webpack --mode=production",
+    "replacePath": "bash ./replacePath.sh",
+    "build:dev": "npx webpack"
   },
   "repository": {
     "type": "git",
