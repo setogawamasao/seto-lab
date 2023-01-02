@@ -165,15 +165,12 @@ header {
     gap: 30px 40px;
     .work {
       width: calc(90% / 3);
-      // height: 400px;
       &-img {
         text-align: center;
         background-color: #000;
         margin-bottom: 15px;
       }
-      img {
-        height: 250px;
-      }
+
       .youtube-wrap {
         padding-top: 56.25%;
         width: 100%;
@@ -198,6 +195,9 @@ header {
 }
 
 #skills {
+  .table-wrapper {
+    margin: 60px 0;
+  }
   table {
     th {
       text-align: left;
