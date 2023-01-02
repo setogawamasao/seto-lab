@@ -1,34 +1,26 @@
 extends _layout.pug
 
 block locals
-    - var title = 'Privacy policy | ARPR';
+    - var title = 'ARPR';
 
 block content
-    #privacy
+    #detail
         .header_menu
             include _menu.pug
 
-        .privacy.wrapper
-            //- h1 ARPR プライバシーポリシー
-            //- p 第三者に個人を特定できる情報を提供することはありません。
-            //- h2 個人情報の取り扱いについて
-            //- p ARPRでは個人情報の収集は行っておりません。ARPRで行った入力を外部には行っておりません。
-            //- h2 免責事項
-            //- p 利用上の不具合・不都合に対して可能な限りサポートを行っておりますが、利用者が本アプリを利用して生じた損害に関して、開発元は責任を負わないものとします。
-            //- h2 連絡先
-            //- p ms.job.hunting@gmail.com
+        .detail.wrapper
+            h1 ARPR
 
-            h1 Privacy Policy
-            p masao setogawa built the ARPR app as a Free app. This SERVICE is provided by masao setogawa at no cost and is intended for use as is. This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service. If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy. The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at ARPR unless otherwise defined in this Privacy Policy.
+            h2 開発のきっかけ
+            p 
+                |TilTokを見ていたら、年齢や職業を指して(下画像参照)、自己紹介をしている動画をよく見かける。
+                |おそらくタイミングに併せて後からキャプションを編集しているのだろう。
+                |それなら、画像処理で手を検出して、オブジェクトとの衝突判定を駆使すれば自動化できるのではというのが開発のきっかけ
+            img(src="../images/arpr/tiktok1.png", alt="tiktokでの自己紹介1")
+            img(src="../images/arpr/tiktok2.png", alt="tiktokでの自己紹介2")
 
-            h2 TrueDepth API
-            p Our apps make use of automatically collected information using the device camera and the TrueDepth API provided by Apple. The only use of this information is to track the user’s head and face so that the user can control the AR experience and the selfie filters by moving their device and their head. None of the information collected by the TrueDepth API ever leaves the user's device nor is it persistently stored on the device.
-
-            h2 Information Collection and Use
-            p For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to Name, date of birth, address, phone number, email address, image, video, depth information. The information that I request will be retained on your device and is not collected by me in any way.
-
-            h2 Log Data
-            p I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+            h2 利用している技術
+            p ブラウザでの顔や手の検出は以前から挑戦はしていたが、フリーのjavascriptライブラリには限界を感じていたのでiosを選択
 
             h2 Cookies
             p Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.

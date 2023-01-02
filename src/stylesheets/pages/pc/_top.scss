@@ -204,6 +204,7 @@ header {
     }
     th,
     td {
+      font-family: Arial, Helvetica, sans-serif;
       padding-bottom: 6px;
     }
   }
@@ -235,6 +236,7 @@ header {
     }
     th,
     td {
+      font-family: Arial, Helvetica, sans-serif;
       padding-bottom: 6px;
     }
   }
@@ -263,7 +265,7 @@ header {
   }
 }
 
-#privacy {
+#detail {
   // background: -webkit-linear-gradient(0deg, #00ad00, #6de3fc, #9464fe);
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
@@ -280,7 +282,7 @@ header {
     padding: 30px 22px;
   }
 }
-.privacy {
+.detail {
   padding-top: 60px;
   padding-bottom: 60px;
   h1 {

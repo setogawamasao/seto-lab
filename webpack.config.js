@@ -56,7 +56,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|mp4|svg|gif)/,
+        test: /\.(png|jpg|jpeg|mp4|svg|gif|ico)/,
         type: "asset/resource",
         generator: {
           filename: "images/[name]-[contenthash][ext]",
@@ -105,8 +105,8 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/templates/privacypolicy.pug",
-      filename: "privacypolicy.html",
+      template: "./src/templates/arpr.pug",
+      filename: "arpr.html",
     }),
     new CleanWebpackPlugin(),
   ],
