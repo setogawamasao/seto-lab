@@ -103,6 +103,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/templates/index.pug",
       filename: "index.html",
+      favicon: "./src/favicon.ico",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/arpr.pug",
