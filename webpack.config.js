@@ -104,9 +104,6 @@ module.exports = {
       template: "./src/templates/index.pug",
       filename: "index.html",
       favicon: "./src/favicon.ico",
-      meta: {
-        "og:image": { property: "og:image", content: "./src/og.png" },
-      },
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/arpr.pug",
