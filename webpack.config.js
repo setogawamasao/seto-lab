@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CnameWebpackPlugin = require("cname-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -59,26 +60,8 @@ module.exports = {
         test: /\.(png|jpg|jpeg|mp4|svg|gif|ico)/,
         type: "asset/resource",
         generator: {
-          filename: "images/[name]-[contenthash][ext]",
+          filename: "images/[name][ext]",
         },
-        use: [
-          // {
-          //     loader: 'file-loader',
-          //     options: {
-          //         esModule: false,
-          //         name: 'images/[name].[ext]',
-          //     }
-          // },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-            },
-          },
-        ],
       },
       {
         test: /\.pug/,
@@ -103,12 +86,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/templates/index.pug",
       filename: "index.html",
-      favicon: "./src/favicon.ico",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/arpr.pug",
       filename: "arpr.html",
     }),
     new CleanWebpackPlugin(),
+    new CnameWebpackPlugin({
+      domain: "seto-lab.com",
+    }),
   ],
 };
