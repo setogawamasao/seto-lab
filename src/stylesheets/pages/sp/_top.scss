@@ -46,6 +46,10 @@ h1 {
     img {
       width: 65%;
     }
+    canvas {
+      width: 65% !important;
+      height: auto !important;
+    }
     &-h1 {
       text-align: center;
     }
