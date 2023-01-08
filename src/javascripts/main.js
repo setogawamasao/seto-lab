@@ -16,6 +16,12 @@ import Glitch from "./glitch";
 
 function initP5(p) {
   p.setup = function () {
+    // seto-labの画像を削除
+    const topTitleElement = document.getElementById("seto-title");
+    if (topTitleElement) {
+      topTitleElement.remove();
+    }
+    // キャンバス設定
     const canvas = p.createCanvas(673, 131);
     canvas.parent("P5Canvas");
     p.loadImage(imgSrc, function (img) {
